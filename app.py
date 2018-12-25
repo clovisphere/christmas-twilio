@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/voice", methods=['GET', 'POST'])
 def voice():
-    """Respond to incoming phone calls with a 'Merry X-Mas' message"""
+    """Respond to incoming phone calls with an 'X-Mas' message"""
     # Start our TwiML response
     resp = VoiceResponse()
     # Read a message aloud to the caller
