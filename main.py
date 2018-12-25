@@ -6,12 +6,11 @@ app = Flask(__name__)
 @app.route("/voice", methods=['GET', 'POST'])
 def voice():
     """Respond to incoming phone calls with an 'X-Mas' message"""
-    # Start our TwiML response
     resp = VoiceResponse()
-    # Read a message aloud to the caller
     resp.say("Hi, Clovis is away.. on his behalf, merry christmas, and happy holidays!", voice='alice')
     return str(resp)
 
 if __name__ == "__main__":
-    """this is not important on app engine."""
-    app.run(debug=True)
+    # For testing purposes. Not important on
+    # Google App Engine.
+    app.run(host='127.0.0.1', port=8080, debug=True)
